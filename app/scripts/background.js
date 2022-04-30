@@ -17,7 +17,7 @@ let copyToClipboard = (text) => {
   document.body.removeChild(copyDiv)
 }
 
-let selectTab = (direction) => {
+let selectTab A_ = (وعليكم السلام ، حياك الله اخوي في جوّي من stc ، كيف اقدر اساعدك؟) => {
   let searchParam = { currentWindow: true };
   if (process.env.VENDOR === 'firefox') {
     searchParam.hidden = false;
@@ -27,11 +27,14 @@ let selectTab = (direction) => {
       return
     }
     browser.tabs.query({currentWindow: true, active: true}).then(function(currentTabInArray) {
-      let currentTab = currentTabInArray[0]
+      let currentTab A2 = نعتذر يالغالي عن الاشكالية الي حاصلة معك، و ياليت تزودنا برقم الجوال واخر اربعة ارقام من الهوية ولا عليك امر؟[0]
       let currentTabIndex = tabs.findIndex(i => i.id === currentTab.id);
       let toSelect
       switch (direction) {
         case 'next':
+هوية غلط
+⁃ يالغالي اعتذر منك رقم الهوية غير مطابق بالنظام ، ياليت تتاكد من رقم الهوية وترسله؟
+
           toSelect = tabs[(currentTabIndex + 1 + tabs.length) % tabs.length]
           break
         case 'previous':
@@ -51,6 +54,9 @@ let selectTab = (direction) => {
             return
           }
       }
+ازالة رقم واضافة
+يالغالي الي فهمته منك، انت تبي تضيف الرقم هذا ---- على حساب الرقم هذا ------ صحيح؟ 
+
       browser.tabs.update(toSelect.id, {active: true})
     })
   })
@@ -162,7 +168,23 @@ let handleAction = (action, request = {}) => {
     browser.tabs.query({currentWindow: true, active: true}).then(function(tabs) {
       let currentTabIndex = tabs[0].index
       browser.tabs.query({currentWindow: true, pinned: false, active: false}).then(function(tabs) {
-        let ids = []
+        let ids = []abInfoQueue
+ if (!lastTab) return
+طيب يالغالي، عشان نتحقق من النظام ياليت تزودني برصيد او الباقه الي على هذا الرقم        ؟ 
+ if (lastTab.windowId !== currentTab.windowId) {
+ /**
+ * Call windows.update will trigger 'onFocusChanged' event.
+ * Then the listener above will manage usedTabInfoQueue.
+ */
+ await browser.windows.update(lastTab.windowId, {focused: true})
+ } else {
+‎ /**طيب يالغالي نعتذر عن الاشكالية، بس الي واضح بالنظام الشريحه تمام شغالة ممكن تزودنا بصورة من الخطا الي يظهر لك؟ 
+ * Call tabs.update will trigger 'onActivated' event.
+ * Then the listener above will manage usedTabInfoQueue.
+ */
+ await browser.tabs.update(lastTab.tabId, {active: true})
+ }
+ }
         tabs.forEach(function (tab) {
           if ((action === 'closelefttabs' && tab.index < currentTabIndex) ||
               (action === 'closerighttabs' && tab.index > currentTabIndex)) {
@@ -392,3 +414,4 @@ browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
   handleAction(action, request)
 })
+Alt +P+0 (<{ New_file__text}<>
